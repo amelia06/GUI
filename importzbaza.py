@@ -14,4 +14,3 @@ baza=["Sprawdź to emipirycznie.","Amfetamina jest nieszkodliwa.","Jak kogni to 
 okno=Tk()
 okno.title("Kogni-ipsum 2019")
 okno.geometry("400x100")
-xyz
