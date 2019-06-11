@@ -9,3 +9,11 @@ def przycisk_akapity():
             None
         else:
             lista.append('\n\n')
+def przycisk_zdania():
+    lista=[]
+    for i in range(int(pole_zdania.get())):
+        cytat=random.choice(baza)
+        baza.remove(cytat)
+        lista.append(cytat)
+    odpowiedz=''.join(lista)
+    messagebox.showinfo("Wygenerowane zdania", odpowiedz)
