@@ -9,10 +9,12 @@ baza=["Sprawdź to emipirycznie.","Amfetamina jest nieszkodliwa.","Jak kogni to 
 "Następnie badani decydowali, czy litera kontrolna była w prezentowanym zbiorze pokazana.","Percepcja odpowiada za odbieranie informacji z otoczenia.",
 "Z badania wynika, że przeszukiwanie wzrokowe różni się od innych zachowań wizualnych.","Czy zdałeś już meto?","Pobrałeś już SPSSa?","Zaliczenie z filozofii jest ustne??!",
 "A Pani jak sądzi?","Odczuwam niepokój filozoficzny."]
+
 def przycisk1():
     lista=[]
     for i in range(int(pole_zdania.get())):
-        cytat=random.choice(baza)
+        baza=baza1[:]
+        cytat=random.choice(baza1)
         baza.remove(cytat)
         lista.append(cytat)
     rozwiazanie=''.join(lista)
@@ -22,15 +24,11 @@ def przycisk2():
     lista=[]
     for i in range(int(pole_akapity.get())+1):
         for j in range(0,random.randint(3,15)):
-            cytat=random.choice(baza)
+            baza=baza1[:]
+            cytat=random.choice(baza1)
             baza.remove(cytat)
             lista.append(cytat+ " ")
-        if i==1:
-            None
-        else:
-            lista.append('\n\n')
-    rozwiazanie=''.join(lista)
-    messagebox.showinfo("Wygenerowane akapity", rozwiazanie)
+
 okno=Tk()
 okno.title("Kogni-ipsum")
 okno.geometry("400x100")
