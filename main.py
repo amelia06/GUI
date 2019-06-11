@@ -8,9 +8,17 @@ baza=["Sprawdź to emipirycznie.","Amfetamina jest nieszkodliwa.","Jak kogni to 
 "Problem umysł-ciało jest obecnie uważany za kluczowy w filozofii umysłu.","W eksperymencie Stroopa osoby badane mają określić kolor atramentu, którym napisano słowo i powstrzymać się przed przeczytaniem samego słowa.",
 "Następnie badani decydowali, czy litera kontrolna była w prezentowanym zbiorze pokazana.","Percepcja odpowiada za odbieranie informacji z otoczenia.",
 "Z badania wynika, że przeszukiwanie wzrokowe różni się od innych zachowań wizualnych.","Czy zdałeś już meto?","Pobrałeś już SPSSa?","Zaliczenie z filozofii jest ustne??!",
-"A Pani jak sądzi?","Odczuwam niepokój filozoficzny.", "Sesja się zbliża... Dobrze, że metodologię zdałam w pierwszym terminie!", "Trzeba było iść na algorytmikę, mielibyście luz.", "Miałam już rekurencję na algorytmice! Wszystko jasne.", "Ale i tak nigdy nie zrozumiem o co chodzi Mareczkowi.", "Trzeba znać nazwiska?", "Masz ładne notatki?", "Szukam notatek z BPZ!", "Jak pobrać te prezentacje?", "Czy wy też macie problem z pobraniem tych prezentacji?", "Jakie to są zmienne interwałowe?"]
+"A Pani jak sądzi?","Odczuwam niepokój filozoficzny."]
+def przycisk1():
+    lista=[]
+    for i in range(int(pole_zdania.get())):
+        cytat=random.choice(baza)
+        baza.remove(cytat)
+        lista.append(cytat)
+    rozwiazanie=''.join(lista)
+    messagebox.showinfo("Wygenerowane zdania", rozwiazanie)
 
-def przycisk_akapity():
+def przycisk2():
     lista=[]
     for i in range(int(pole_akapity.get())+1):
         for j in range(0,random.randint(3,15)):
@@ -21,20 +29,17 @@ def przycisk_akapity():
             None
         else:
             lista.append('\n\n')
-def przycisk_zdania():
-    lista=[]
-    for i in range(int(pole_zdania.get())):
-        cytat=random.choice(baza)
-        baza.remove(cytat)
-        lista.append(cytat)
-    odpowiedz=''.join(lista)
-    messagebox.showinfo("Wygenerowane zdania", odpowiedz)
+    rozwiazanie=''.join(lista)
+    messagebox.showinfo("Wygenerowane akapity", rozwiazanie)
 okno=Tk()
-okno.title("Kogni-ipsum 2019")
+okno.title("Kogni-ipsum")
 okno.geometry("400x100")
+
+
+####
 zdania = Label(okno, text="Wprowadź ilość zdań")
 zdania.grid(row=2,column=0)
-przycisk_zdania=Button(okno, text = "Generuj zdania", command = przycisk_zdania) ### Możecie robić definicje ;)
+przycisk_zdania=Button(okno, text = "Generuj zdania", command = przycisk1)
 przycisk_zdania.grid(row=2,column=2)
 pole_zdania= Entry(okno)
 pole_zdania.grid(row=2,column=1)
@@ -43,6 +48,7 @@ akapity = Label(okno, text="Wprowadź ilość akapitow")
 akapity.grid(row=3, column=0)
 pole_akapity= Entry(okno)
 pole_akapity.grid(row=3,column=1)
-przycisk_akapity=Button(okno, text = "Generuj akapity", command = przycisk_akapity) ### Możecie robić definicje ;)
+przycisk_akapity=Button(okno, text = "Generuj akapity", command = przycisk2)
 przycisk_akapity.grid(row=3, column=2)
 okno.mainloop()
+
