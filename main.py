@@ -8,7 +8,7 @@ baza1=["Sprawdź to emipirycznie.","Amfetamina jest nieszkodliwa.","Jak kogni to
 "Problem umysł-ciało jest obecnie uważany za kluczowy w filozofii umysłu.","W eksperymencie Stroopa osoby badane mają określić kolor atramentu, którym napisano słowo i powstrzymać się przed przeczytaniem samego słowa.",
 "Następnie badani decydowali, czy litera kontrolna była w prezentowanym zbiorze pokazana.","Percepcja odpowiada za odbieranie informacji z otoczenia.",
 "Z badania wynika, że przeszukiwanie wzrokowe różni się od innych zachowań wizualnych.","Czy zdałeś już meto?","Pobrałeś już SPSSa?","Zaliczenie z filozofii jest ustne??!",
-"A Pani jak sądzi?","Odczuwam niepokój filozoficzny.", "Sesja się zbliża... Dobrze, że metodologię zdałam w pierwszym terminie!", "Trzeba było iść na algorytmikę, mielibyście luz.", "Miałam już rekurencję na algorytmice! Wszystko jasne.", "Ale i tak nigdy nie zrozumiem o co chodzi Mareczkowi.", "Trzeba znać nazwiska?", "Masz ładne notatki?", "Szukam notatek z BPZ!", "Jak pobrać te prezentacje?", "Czy wy też macie problem z pobraniem tych prezentacji?", "Jakie to są zmienne interwałowe?"]]
+"A Pani jak sądzi?","Odczuwam niepokój filozoficzny.", "Sesja się zbliża... Dobrze, że metodologię zdałam w pierwszym terminie!", "Trzeba było iść na algorytmikę, mielibyście luz.", "Miałam już rekurencję na algorytmice! Wszystko jasne.", "Ale i tak nigdy nie zrozumiem o co chodzi Mareczkowi.", "Trzeba znać nazwiska?", "Masz ładne notatki?", "Szukam notatek z BPZ!", "Jak pobrać te prezentacje?", "Czy wy też macie problem z pobraniem tych prezentacji?", "Jakie to są zmienne interwałowe?"]
 
 def przycisk1():
     lista=[]
