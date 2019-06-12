@@ -30,16 +30,80 @@ def przycisk2():
             lista.append(cytat+ " ")
     rozwiazanie=''.join(lista)
     messagebox.showinfo("Wygenerowane zdania", rozwiazanie)
+def przycisk1():
+    try:
+        lista=[]
+        baza=baza1[:]
+        if len(baza1)<int(pole_zdania.get()):
+            messagebox.showinfo("Wygenerowane zdania", "Nie mogę wygenerować takiej ilości zdań")
+            pole_zdania.delete(0, 'end')
+        else:
+            for i in range(int(pole_zdania.get())):
+
+                cytat=random.choice(baza)
+                baza.remove(cytat)
+                lista.append(cytat)
+            rozwiazanie=''.join(lista)
+            messagebox.showinfo("Wygenerowane zdania", rozwiazanie)
+            pole_zdania.delete(0, 'end')
+    except ValueError:
+        pole_zdania.delete(0, 'end')
+    except IndexError:
+        pole_zdania.delete(0, 'end')
+def przycisk2():
+    try:
+        lista=[]
+        baza=baza1[:]
+        if int(pole_akapity.get())>8 or int(pole_akapity.get())<1:
+            messagebox.showinfo("Wygenerowane akapity", "Nie mogę wygenerować takiej ilości akapitów")
+            pole_akapity.delete(0, 'end')
+        else:
+            for i in range(int(pole_akapity.get())+1):
+                for j in range(0,random.randint(3,15)):
+                    cytat=random.choice(baza)
+                    baza.remove(cytat)
+                    lista.append(cytat+ " ")
+                if i==1:
+                    None
+                else:
+                    lista.append('\n\n')
+            rozwiazanie=''.join(lista)
+            messagebox.showinfo("Wygenerowane akapity", rozwiazanie)
+            pole_akapity.delete(0, 'end')
+    except ValueError:
+        pole_akapity.delete(0, 'end')
+    except IndexError:
+        pole_akapity.delete(0, 'end')
+def akcjaZrob ():
+    messagebox.showinfo("Kontakt","Biuro Kogni-ipsum \n Mickiewicza 4/12 \n 61-233 Poznań \n adres e-mail:kogniipsum@poczta.pl")
+def akcjaAutor ():
+    messagebox.showinfo("Twórcy","Autorzy: \n Kzysztof Dziedzina \n Alicja Kowalczyk \n Natalia Skreczko \n Amelia Szostak")
+def akcja_O_nas ():
+    messagebox.showinfo("Nasza firma","Jesteśmy nowoczesną firmą tworzącą zaawansowane projekty w szybkim czasie. Używamy sprzętu najlepszej jakości i dbamy o dobro naszego klienta. W naszym biurze zawsze panuje przyjemna atmosfera.")
+
 
 okno=Tk()
 okno.title("Kogni-ipsum")
-okno.geometry("400x100")
+okno.geometry("600x300")
+pasekMenu=Menu(okno)
+
+
+opcjeMenu=Menu(pasekMenu,tearoff=0)
+pasekMenu.add_cascade(label="Opcje",menu=opcjeMenu)
+opcjeMenu.add_command(label="Wyjdź",command=okno.quit)
+pomocMenu=Menu(pasekMenu,tearoff=0)
+pasekMenu.add_cascade(label="Pomoc",menu=pomocMenu)
+pomocMenu.add_command(label="Kontakt z nami",command=akcjaZrob)
+kontaktMenu=Menu(pasekMenu,tearoff=0)
+pasekMenu.add_cascade(label="Autorzy",menu=kontaktMenu)
+kontaktMenu.add_command(label="O Autorach",command=akcjaAutor)
+kontaktMenu.add_command(label="Więcej o nas...",command=akcja_O_nas)
 
 
 ####
 zdania = Label(okno, text="Wprowadź ilość zdań")
 zdania.grid(row=2,column=0)
-przycisk_zdania=Button(okno, text = "Generuj zdania", command = przycisk1)
+przycisk_zdania=Button(okno, text = "Generuj zdania", command = przycisk1, bg="DarkSlateBlue", fg="gold")
 przycisk_zdania.grid(row=2,column=2)
 pole_zdania= Entry(okno)
 pole_zdania.grid(row=2,column=1)
@@ -48,7 +112,7 @@ akapity = Label(okno, text="Wprowadź ilość akapitow")
 akapity.grid(row=3, column=0)
 pole_akapity= Entry(okno)
 pole_akapity.grid(row=3,column=1)
-przycisk_akapity=Button(okno, text = "Generuj akapity", command = przycisk2)
+przycisk_akapity=Button(okno, text = "Generuj akapity", command = przycisk2, bg="DarkSlateGray", fg="gold")
 przycisk_akapity.grid(row=3, column=2)
+okno.config(menu=pasekMenu)
 okno.mainloop()
-
