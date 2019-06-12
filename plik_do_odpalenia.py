@@ -11,26 +11,6 @@ baza1=["Sprawdź to emipirycznie.","Amfetamina jest nieszkodliwa.","Jak kogni to
 "A Pani jak sądzi?","Odczuwam niepokój filozoficzny.", "Sesja się zbliża... Dobrze, że metodologię zdałam w pierwszym terminie!", "Trzeba było iść na algorytmikę, mielibyście luz.", "Miałam już rekurencję na algorytmice! Wszystko jasne.", "Ale i tak nigdy nie zrozumiem o co chodzi Mareczkowi.", "Trzeba znać nazwiska?", "Masz ładne notatki?", "Szukam notatek z BPZ!", "Jak pobrać te prezentacje?", "Czy wy też macie problem z pobraniem tych prezentacji?", "Jakie to są zmienne interwałowe?"]
 
 def przycisk1():
-    lista=[]
-    for i in range(int(pole_zdania.get())):
-        baza=baza1[:]
-        cytat=random.choice(baza)
-        baza.remove(cytat)
-        lista.append(cytat)
-    rozwiazanie=''.join(lista)
-    messagebox.showinfo("Wygenerowane zdania", rozwiazanie)
-
-def przycisk2():
-    lista=[]
-    for i in range(int(pole_akapity.get())+1):
-        for j in range(0,random.randint(3,15)):
-            baza=baza1[:]
-            cytat=random.choice(baza)
-            baza.remove(cytat)
-            lista.append(cytat+ " ")
-    rozwiazanie=''.join(lista)
-    messagebox.showinfo("Wygenerowane zdania", rozwiazanie)
-def przycisk1():
     try:
         lista=[]
         baza=baza1[:]
