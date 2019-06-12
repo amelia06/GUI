@@ -28,6 +28,8 @@ def przycisk2():
             cytat=random.choice(baza)
             baza.remove(cytat)
             lista.append(cytat+ " ")
+    rozwiazanie=''.join(lista)
+    messagebox.showinfo("Wygenerowane zdania", rozwiazanie)
 
 okno=Tk()
 okno.title("Kogni-ipsum")
